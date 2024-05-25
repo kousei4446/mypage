@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+html{
+  scroll-behavior:smooth
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav{
+  background-color: rgba(98, 223, 223, 0.44);
   display: flex;
+  justify-content: space-between;
+  width: 100%;
+  
+
+}
+nav h1{
+  color: white;
+  font-size: 40px;
+  margin-left: 40px;
+}
+.navThree{
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 20px;
+}
+.navThree>a{
+  margin-right: 30px;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.main{
+  display: flex;
+  align-items: center;
   flex-direction: column;
+  
+}
+.product{
+  margin: 20px auto 20px auto;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.product>h1,.about>h1,.skill>h1{
+  text-align: center;
+  font-size: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.about{
+  text-align: center;
+  margin: 20px auto;
+}
+.about img{
+  display: block;
+  margin: 0 auto;
+}
+.dog{
+  border-radius: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width:768px){
+  .display{
+    display: flex;
   }
-  to {
-    transform: rotate(360deg);
+  .display div{
+    height: 200px;
+    width: 300px;
+    margin-left: 100px;
   }
+  .product_img{
+    height: 200px;
+    width: 300px;
+  }
+  .about_content{
+    display: flex;
+  }
+  .about_content>p{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 40px;
+  }
+
 }
