@@ -6,7 +6,7 @@ nav{
   background-color: rgba(98, 223, 223, 0.44);
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
   
 
 }
@@ -56,14 +56,19 @@ nav h1{
   border-radius: 50%;
 }
 
+
 @media screen and (min-width:768px){
-  .display{
-    display: flex;
+  .display {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    place-items: center;
+    gap: 50px;
+    margin-bottom: 40px;
   }
+
   .display div{
     height: 200px;
     width: 300px;
-    margin-left: 100px;
   }
   .product_img{
     height: 200px;
