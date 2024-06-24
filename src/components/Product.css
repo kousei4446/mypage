@@ -1,0 +1,64 @@
+
+.product {
+    margin: 20px auto 20px auto;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.product>h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+
+.product{
+    width: 100%;
+  }
+
+.product_img {
+box-shadow: 0px 0px 15px -5px #777777;
+border-radius: 10px;
+height: 60%;
+width: 100%;
+}
+
+.product-content{
+    box-shadow: 0px 0px 15px -5px #777777;
+}
+
+/* 768px以上の画面幅に適用するスタイル */
+@media screen and (min-width:768px) {
+.display {
+    display: grid;
+    place-items: center;
+    width: 1200px;
+    height: 900px;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+.display div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.product{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product_img {
+    height: 60%;
+    width: 90%;
+    box-shadow: 0px 0px 15px -5px #777777;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  }

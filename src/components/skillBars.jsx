@@ -1,8 +1,8 @@
 import React from 'react'
 
 function SkillBars() {
-    const langages = [ "Python", "JavaScript", "TypeScript"]
-    const levels = [ 60, 55, 40]
+    const langages = [ "Python", "React","JavaScript", "TypeScript"]
+    const levels = [ 60,70, 55, 40]
     const bar_style = {
       backgroundColor: "gray", 
       height: "10px", 
@@ -12,9 +12,9 @@ function SkillBars() {
     }
   
     return (
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex" ,width:"100%"}}>
         <div>
-          <p style={{fontWeight:"bold"}}>langage</p>
+          <p style={{fontWeight:"bold"}}>Frontend</p>
           {langages.map((langage) => {
             return (
               <div key={langage}>
