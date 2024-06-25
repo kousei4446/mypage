@@ -33,13 +33,13 @@ function App() {
       <nav>
         <h1>Portfolio</h1>
         <div className='navThree'>
-          <Link to='/'>home</Link>
+          <Link to='/mypage'>home</Link>
           <Link to='/product'>product</Link>
           <Link to="/contact">contact</Link>
         </div>
       </nav>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/mypage' element={<Home />} />
         <Route path='/product' element={<Product />} />
         <Route path='/contact' element={<Contact/>} />
       </Routes>
