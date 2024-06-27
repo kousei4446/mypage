@@ -52,11 +52,15 @@ function App() {
           </div>
         )}
       </div>
+ 
       <Routes>
         <Route path='/mypage' element={<Home />} />
         <Route path='/mypage/product' element={<Product />} />
         <Route path='/mypage/contact' element={<Contact />} />
       </Routes>
+      <footer>
+        <p>© 2024 Kudo Kousei</p>
+      </footer>
     </Router>
   );
 }
