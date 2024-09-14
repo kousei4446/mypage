@@ -1,0 +1,46 @@
+.hamburger-menu.open .line1 {
+  transform: rotate(45deg) translate(0, 7px);
+  /* Y方向の位置を微調整 */
+}
+
+.hamburger-menu.open .line2 {
+  opacity: 0;
+  /* 中央の線を消す */
+}
+
+.hamburger-menu.open .line3 {
+  transform: rotate(-45deg) translate(0, -7px);
+  /* Y方向の位置を微調整 */
+}
+
+.hamburger-menu {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  position: relative;
+  /* 親要素を相対位置に */
+}
+
+.line {
+  height: 4px;
+  background-color: white;
+  transition: all 0.5s ease;
+  width: 100%;
+  /* 幅を100%に設定 */
+}
+
+.hamburger-menu.open .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.open .line2 {
+  opacity: 0;
+}
+
+.hamburger-menu.open .line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}

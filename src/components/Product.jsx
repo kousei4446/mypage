@@ -1,78 +1,52 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Product.css';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import { productList } from './ProductList';
-import { doc, getDoc, increment, setDoc, updateDoc } from 'firebase/firestore';
-import { db } from './firebase';
+import { Link } from 'react-router-dom';
 
 function Product() {
   const [count, setCount] = useState(0);
-  const [isPush, setIsPush] = useState(() => JSON.parse(localStorage.getItem("good")) || false);
-
-  useEffect(() => {
-    localStorage.setItem("good", JSON.stringify(isPush))
-  }, [isPush])
-  useEffect(() => {
-    const fetchCount = async () => {
-      const docRef = doc(db, "likes", "button1");
-      const docSnap = await getDoc(docRef);
-
-      if (docSnap.exists()) {
-        setCount(docSnap.data().count);
-      } else {
-        await setDoc(docRef, { count: 0 });
-      }
-    };
-
-    fetchCount();
-  }, []);
-
-  const handleClick = async () => {
-    setIsPush(prev => !prev);
-    const docRef = doc(db, "likes", "button1");
-
-    if (isPush) {
-      await updateDoc(docRef, {
-        count: increment(-1)
-      });
-    } else {
-      await updateDoc(docRef, {
-        count: increment(1)
-      });
-    }
-
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      setCount(docSnap.data().count);
-    }
-  };
+  const productList = [
+    "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%20(354).png?alt=media&token=7cf2253d-080c-4c26-bfa3-91770a0f40cc",
+    "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/img6.png?alt=media&token=202f69cd-12e9-4d78-a76a-6a5d45280d3e",
+    "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/producthome.png?alt=media&token=26dfc7d9-257d-4e67-a3c9-287b0ea6fd63"
+  ]
+  const discription = ["英単語学習webアプリです。", "連立方程式を加減法で解くwebアプリです。", "迷子、落とし物を見つけるwebアプリです。"]
 
   return (
-    <div>
+    <>
+      <br />
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        <h1 style={{ textAlign: "center", fontSize: "50px", borderBottom: "1px solid rgb(217, 217, 217)", width: "70%" }}>Product</h1>
+        <h1 style={{
+          textAlign: "center",
+          //  borderBottom: "1px solid rgb(217, 217, 217)",
+          width: "60%"
+        }}>Product</h1>
       </div>
-      <div className='pa'>
-        {productList.map((pro, index) => (
-          <div key={index} className='product' id='product' >
-            <div className='product-content'>
-              <h3>Product{index + 1}</h3>
-              <div className='main_img'>
-                <img src={pro.img} alt={`img${index + 1}`} className='product_img' />
+      <div style={{ display: "flex", justifyContent: "center", flexDirection: "clum", width: "100%" }}>
+        <div style={{ width: "70%" }}>
+          <div className='pa'>
+            {productList.map((pro, index) => (
+              <div key={index} className='product' id='product' >
+                <div className='product-content'>
+                  <h3>Product{index + 1}</h3>
+                  <div className='main_img'>
+                    <img src={pro} alt={`img${index + 1}`} className='product_img' />
+                  </div>
+                </div>
+                <br />
+                <p>{discription[index]}</p>
+                <Link to={`/mypage/product/${index + 1}`}>詳しくはこちら</Link>
+                <br />
               </div>
-              <div className='likecontent'>
-                <button className="like-btn" onClick={handleClick}>
-                  <ThumbUpIcon style={isPush ? { color: "#98e0fa", marginTop: "8px" } : { color: "rgb(255,255,255)", marginTop: "8px" }} />
-                </button>
-                <p className='like'>Like </p>
-                <p className='like'>{count}</p>
-              </div>
-            </div>
-            <br />
+            ))}
           </div>
-        ))}
+        </div>
+        <div className="sample"></div>
       </div>
-    </div>
+
+      <footer>
+        <p>© 2024 Kudo Kousei</p>
+      </footer>
+    </>
   );
 }
 

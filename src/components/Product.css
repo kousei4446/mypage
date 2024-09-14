@@ -1,18 +1,18 @@
 .product {
     display: flex;
-    padding-left:30px ;
-    padding-right:30px ;
+    padding-left: 30px;
+    padding-right: 30px;
     margin-bottom: 50px;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 80%;
     justify-content: center;
-    background-color: #1d7595;
+    /* background-color: hsl(196, 100%, 88%); */
     box-shadow: 0px 0px 15px -5px #777777;
-    border-radius: 10%;
+    border-radius: 30px;
 }
 
-.main_img{
+.main_img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,57 +21,89 @@
 .product_img {
     box-shadow: 0px 0px 15px -5px #777777;
     height: 100%;
-    width: 100%;
+    max-width: 100%;
 }
-.product-content h3{
-    color: white;
+
+.product-content h3 {
+    color: black;
     font-size: 30px;
 
 }
-.like{
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-.likecontent{
-    display: flex;
-    padding-left: 8px;
-    padding-bottom: 8px;
-    border-radius: 5px;
-    margin-top: 10px;
-    gap: 10px;
-    width: 30%;
-    height: 35px;
-    justify-content: left;
-    align-items: center;
-}
-.like-btn{
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-}
 
 
-/* 768px以上の画面幅に適用するスタイル */
-@media screen and (min-width:640px) {
-    .pa{
+
+
+@media screen and (min-width:940px) {
+    .pa {
         display: grid;
         width: 100%;
-        grid-template-columns:1fr 1fr ;
+        grid-template-columns: 1fr 1fr;
         place-items: center;
-        gap: 20px;
+        justify-content: center;
+        align-items: center;
     }
-    .product{
-        width: 80%;
+
+    .product {
+        width: 70%;
+        padding: 40px;
     }
+
     .product_img {
         display: flex;
         justify-content: center;
         align-items: center;
         box-shadow: 0px 0px 15px -5px #777777;
-        height: 100%;
-        width: 100%;
+        max-width: 400px;
+        max-height: 500px;
     }
 
+}
+
+.sample {
+    position: fixed;
+    /* スクロールしても背景が固定されるようにする */
+    top: 0;
+    left: 0;
+    /* 左上に固定 */
+    overflow: hidden;
+    width: 100vw;
+    /* ビューポートの幅に合わせる */
+    height: calc(100vh);
+    /* ビューポートの高さに合わせる */
+    background-color: #e1faff;
+    z-index: -999;
+    /* 他のコンテンツの後ろに配置 */
+}
+
+.sample::before,
+.sample::after {
+    position: absolute;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    content: "";
+    background-color: white;
+    animation: wave linear 6s infinite;
+}
+
+.sample::before {
+    top: -150%;
+    border-radius: 50% 50% / 50% 70%;
+}
+
+.sample::after {
+    top: -146%;
+    border-radius: 30% 70% / 30% 50%;
+    opacity: 0.2;
+    animation-delay: 0.4s;
+}
+
+@keyframes wave {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
 }

@@ -1,10 +1,37 @@
-.contact_content{
+.contact {
+    text-align: center;
+    font-size: 30px;
+}
+
+@media screen and (max-width:600px) {
+    .contact {
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+}
+
+.contact_content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.contact_content button{
+
+.contact_content input {
+    border: 1px solid rgb(172, 172, 172);
+    border-radius: 5px;
+    width: 50%;
+    height: 50px;
+}
+
+.contact_content textarea {
+    border: 1px solid rgb(172, 172, 172);
+    border-radius: 5px;
+    width: 50%;
+    height: 100px;
+}
+
+.contact_content button {
     cursor: pointer;
     height: 40px;
     width: 20%;
@@ -13,10 +40,10 @@
     border: none;
     border-radius: 5px;
     background-color: rgb(59, 180, 139);
-    transition:all 0.3s;
+    transition: all 0.3s;
 }
 
-.contact_content button:hover{
+.contact_content button:hover {
     background-color: rgb(78, 122, 87);
     transform: translateY(5px);
     box-shadow: none;
