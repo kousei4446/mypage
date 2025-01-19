@@ -17,14 +17,12 @@ function Home() {
         <div className='about_content'>
           <img src={image3} alt='dog' style={{ margin: "0px" }} height="200px" width="200px" className='dog' />
           <p className="discription" style={{ width: "50%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-            こんにちは、現在Reactの勉強をしている関西の大学３年です。私は犬を昔飼っていて犬が大好きです。大学ではボランティア部の副部長を務めています。プログラミングに興味があり、特にフロントエンドに力を入れています。趣味でバスケットボールを楽しんでいます。よろしくお願いします!!!
+            こんにちは、関西の大学に通っている26卒の大学生です。大学では、webアプリ開発に興味を持ち特にReactを勉強しており、他にもLaravel,Djangoの経験があります。他にも最近土曜日はAtcoderに参加しています。
+            研究室では知能情報研究室で主にAiのニューラルネットワークに関して学んでいます。将来的にはフロント、バックだけでなくAiも触れたらなと思っています！！
           </p>
         </div>
       </div>
       <br />
-      {/* <br />
-      <h1>Reserch</h1>
-      <p>研究室は未定</p> */}
       <br />
       <h1>Github account</h1>
       <a href='https://github.com/kousei4446'>
@@ -48,14 +46,24 @@ function Home() {
         <div style={{ width: "320px", height: "450px", backgroundImage: "linear-gradient(90deg, rgba(168, 202, 240, 1), rgba(233, 240, 250, 1))", boxShadow: "11px 11px 8.6px rgba(0, 0, 0, 0.25)", padding: "10px" }}>
           <div>
             <p style={{ fontSize: "25px", marginBottom: "0px", color: "black" }}>株式会社Sky</p>
-            <p style={{ color: "black", fontWeight: "bold", borderBottom: "0.5px solid" }}>2024年9月2日~9月13日(予定)</p>
+            <p style={{ color: "black", fontWeight: "bold", borderBottom: "0.5px solid" }}>2024年9月2日~9月13日</p>
           </div>
           <div>
             <p style={{ color: "black", fontSize: "18px" }}>
               2週間のインターンシップを通じて最新のWeb開発のスキルを学びます。
               Sky株式会社の社内のDXに関する開発を担う「Skyスタイル部」の現場社員さんから、実際に開発現場の業務内容の理解やプログラミングスキルの向上し、
-              実際の成果物の作成を目指します。
+              実際の成果物の作成をおこないました。
             </p>
+          </div>
+        </div>
+        <div style={{ width: "320px", height: "450px", backgroundImage: " linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))", boxShadow: "11px 11px 8.6px rgba(0, 0, 0, 0.25)", padding: "10px" }}>
+          <div>
+            <p style={{ fontSize: "25px", marginBottom: "0px", color: "black" }}>株式会社ジーニー</p>
+            <p style={{ color: "black", fontWeight: "bold", borderBottom: "0.5px solid" }}>2024年10月11日(1Days)</p>
+          </div>
+          <div>
+            <p style={{ color: "black", fontSize: "18px" }}>架空サービスのカレンダーアプリのバグ修正。技術は、React+TypeScriptを使用。
+              ReactFullCallenderをもちいた開発ではじめてだったので公式ドキュメントを参照しながら実装をおこなった。</p>
           </div>
         </div>
       </div>
@@ -97,13 +105,13 @@ const Navigation = ({ isOpen, setIsOpen }) => {
         <div className='navThree'>
           <Link to='/' style={currentPath.includes("product") || currentPath.includes("contact") ? {} : { color: "gray" }}>home</Link>
           <Link to='/mypage/product' style={currentPath.includes("product") ? { color: "gray" } : {}}>product</Link>
-          <Link to="/mypage/contact" style={currentPath.includes("contact") ? { color: "gray" } : {}}>contact</Link>
+          {/* <Link to="/mypage/contact" style={currentPath.includes("contact") ? { color: "gray" } : {}}>contact</Link> */}
         </div>
         <div className='humberger'>
           <HumbergerLine isOpen={isOpen} setIsOpen={setIsOpen} />
           {/* <HamburgerMenu /> */}
         </div>
-      </nav>
+      </nav >
       <div className='hums'>
         {isOpen && (
           <div className='hum'>

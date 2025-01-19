@@ -22,7 +22,7 @@ const products = [
             "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%20(357).png?alt=media&token=2440c553-9a8f-40a3-a973-9e5b50d017c8",
             "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%20(358).png?alt=media&token=d60f689d-ec93-4098-918f-668ea1c3f2f7"
         ],
-        url: "https://mytango-66aa6.web.app/"
+        url: ["https://github.com/kousei4446/mytango.git", "https://mytango-66aa6.web.app/"],
     },
     {
         id: 2,
@@ -35,7 +35,7 @@ const products = [
             "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%20(360).png?alt=media&token=d4abf483-561e-4b55-a2fd-3e5c97900725",
             "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%20(361).png?alt=media&token=e347bccb-dab3-4924-9228-b31ca8f475d0"
         ],
-        url: "https://simultaneousequation-2e472.web.app/"
+        url: ["https://github.com/kousei4446/simultaneous_equation.git", "https://simultaneousequation-2e472.web.app/"]
     },
     {
         id: 3,
@@ -53,7 +53,20 @@ const products = [
             "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/product2.png?alt=media&token=c426da16-5f3a-4902-9509-e7d41ec760f3",
             "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/product3.png?alt=media&token=e12e22e6-0fa8-4679-9756-43f1332cce43"
         ],
-        url: "https://figare.web.app/"
+        url: ["https://github.com/kousei4446/figare.git", "https://figare.web.app/"]
+    },
+    {
+        id: 4,
+        title: "部活シフトアプリ",
+        when: "2024年10月~2025年1月",
+        content: "大学でのボランティア部でシフト制での活動があり、それにともなうシフト表の作成を簡単にするために作った。しかし、開発環境のOSのUbuntuが急遽動かなくなりなくなく断念。機能は完成しており残すはユーザーテストとデプロイのみだったのでとても悔しい。",
+        func: ["ログイン", "カレンダーのタップした日付でシフト登録", "シフト表作成", "シフト表Pdfダウンロード機能", "管理者追加機能"],
+        tools: ["React", "ReactFullCallender", "Laravel", "MySQL", "inertia.js", "vite"],
+        img: [
+            "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%20(580).png?alt=media&token=e036dd8c-a7e4-4b1b-8eef-dbf37c4c66d1",
+            "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%20(579).png?alt=media&token=702f9304-5881-4f1e-924e-737362082aad",
+        ],
+        url: ["https://github.com/kousei4446/shift-app.git"]
     }
 ];
 
@@ -101,12 +114,11 @@ function ProductDetail() {
                                 <li key={index}>{tool}</li>
                             ))}
                         </ul>
-                        {product.url &&
-                            <>
-                                <h4>URL</h4>
-                                <a href={product.url} target="_blank" rel="noopener noreferrer">こちらからappをお試しできます!!</a>
-                            </>
-                        }
+
+                        <h4>URL</h4>
+                        <a href={product.url[0]} target="_blank" rel="noopener noreferrer">ソースコードはこちら</a>
+                        {product.url.length == 2 && <a href={product.url[1]} target="_blank" rel="noopener noreferrer">こちらからappをお試しできます!!</a>}
+
                         <br />
                         <br />
                     </div>
