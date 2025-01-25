@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
 import './Product.css';
 import { Link } from 'react-router-dom';
+import { discription, productList } from './deta';
 
 function Product() {
   const [count, setCount] = useState(0);
-  const productList = [
-    "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%20(354).png?alt=media&token=7cf2253d-080c-4c26-bfa3-91770a0f40cc",
-    "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/img6.png?alt=media&token=202f69cd-12e9-4d78-a76a-6a5d45280d3e",
-    "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/producthome.png?alt=media&token=26dfc7d9-257d-4e67-a3c9-287b0ea6fd63",
-    "https://firebasestorage.googleapis.com/v0/b/kousei-site-6b348.appspot.com/o/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%20(580).png?alt=media&token=e036dd8c-a7e4-4b1b-8eef-dbf37c4c66d1",
-
-  ]
-  const discription = ["英単語学習webアプリです。", "連立方程式を加減法で解くwebアプリです。", "迷子、落とし物を見つけるwebアプリです。", "部のシフト管理アプリです"]
 
   return (
     <>
